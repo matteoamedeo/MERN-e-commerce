@@ -5,12 +5,15 @@ import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import UserLayout from "../layout/UserLayout";
 import MetaData from "../layout/MetaData";
+import { useGetCsrfTokenQuery } from "../../redux/api/authApi";
 
 const UpdateProfile = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
+
+  const { data } = useGetCsrfTokenQuery();
 
   const [updateProfile, { isLoading, error, isSuccess }] =
     useUpdateProfileMutation();
@@ -39,6 +42,7 @@ const UpdateProfile = () => {
     const userData = {
       name,
       email,
+      csrfToken: data.csrfToken,
     };
 
     updateProfile(userData);

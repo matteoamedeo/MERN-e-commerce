@@ -42,8 +42,16 @@ export const authApi = createApi({
     logout: builder.query({
       query: () => "/logout",
     }),
+    getCsrfToken: builder.query({
+      query: () => `/getCSRFToken`,
+      providesTags: ["csrfToken"],
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation, useLazyLogoutQuery } =
-  authApi;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useLazyLogoutQuery,
+  useGetCsrfTokenQuery,
+} = authApi;

@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "105bd4d8-b45d-4955-9d5c-8d6bcae83966",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20782056"
+	},
+	"item": [
+		{
+			"name": "Create new Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"shippingInfo\": {\r\n    \"address\": \"123 Main Street\",\r\n    \"city\": \"New York\",\r\n    \"phoneNo\": \"123-456-7890\",\r\n    \"zipCode\": \"10001\",\r\n    \"country\": \"USA\"\r\n  },\r\n  \"orderItems\": [\r\n    {\r\n      \"name\": \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s\",\r\n      \"quantity\": 2,\r\n      \"image\": \"http://res.cloudinary.com/udemy-courses/image/upload/v1689961785/shopit/products/demo/b9m0ddogmkd8xnypmh1l.jpg\",\r\n      \"price\": \"45.89\",\r\n      \"product\": \"65d35d108f7e04f5d12722a5\"\r\n    }\r\n  ],\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentInfo\": {\r\n    \"id\": \"payment_id_here\",\r\n    \"status\": \"Not Paid\"\r\n  },\r\n  \"itemsPrice\": 79.97,\r\n  \"taxAmount\": 7.99,\r\n  \"shippingAmount\": 5.99,\r\n  \"totalAmount\": 93.95\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/orders/new",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/orders/65d6094f402f0bde7aca9c39",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"65d6094f402f0bde7aca9c39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/me/orders",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Orders - ADMIN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/orders",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update/Process Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Shipped\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/orders/65d613633f40277933ce08c4",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"orders",
+						"65d613633f40277933ce08c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/orders/65d613633f40277933ce08c4",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"orders",
+						"65d613633f40277933ce08c4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

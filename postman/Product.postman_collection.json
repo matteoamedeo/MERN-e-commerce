@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "edc4fb9d-4b4d-49a1-9482-7ddc68a20753",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20782056"
+	},
+	"item": [
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/products?keyword=usb",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "usb"
+						},
+						{
+							"key": "category",
+							"value": "Laptops",
+							"disabled": true
+						},
+						{
+							"key": "price[gte]",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s 2\",\r\n  \"price\": 45.89,\r\n  \"description\": \"Ultra-fast cards (2) to take better pictures and Full HD videos (1) with your compact to mid-range point-and-shoot cameras and camcorders. With SanDisk Ultra SDXC UHS-I cards you’ll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD video (1). Take advantage of ultra-fast read speeds of up to 80MB/s (3) to save time moving photos and videos from the card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6).\",\r\n  \"ratings\": 4.5,\r\n  \"images\": [\r\n    {\r\n      \"public_id\": \"shopit/products/demo/u0u5mx7ofp8drzi5yjjt\",\r\n      \"url\": \"http://res.cloudinary.com/udemy-courses/image/upload/v1689961646/shopit/products/demo/u0u5mx7ofp8drzi5yjjt.jpg\"\r\n    },\r\n    {\r\n      \"public_id\": \"shopit/products/demo/g3d7h76n7bdibwfgdrmf\",\r\n      \"url\": \"http://res.cloudinary.com/udemy-courses/image/upload/v1689961649/shopit/products/demo/g3d7h76n7bdibwfgdrmf.jpg\"\r\n    },\r\n    {\r\n      \"public_id\": \"shopit/products/demo/odfmkygdxwwn8i6crteq\",\r\n      \"url\": \"http://res.cloudinary.com/udemy-courses/image/upload/v1689961652/shopit/products/demo/odfmkygdxwwn8i6crteq.jpg\"\r\n    }\r\n  ],\r\n  \"category\": \"Electronics\",\r\n  \"seller\": \"Ebay\",\r\n  \"stock\": 50,\r\n  \"numOfReviews\": 32\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/products",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/products/65d35d108f7e04f5d12722a5",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"65d35d108f7e04f5d12722a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"CAN USB FD Adapter (GC-CAN-USB-FD) 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/products/65d34187d81b6dbcf9f5fc92",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"65d34187d81b6dbcf9f5fc92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/products/65d34187d81b6dbcf9f5fc92",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"65d34187d81b6dbcf9f5fc92"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "718721cb-ed88-40af-9968-84a13f448cba",
+		"name": "Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20782056"
+	},
+	"item": [
+		{
+			"name": "Create/Update Review",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rating\": 4,\r\n    \"comment\": \"Nice\",\r\n    \"productId\": \"65d35d108f7e04f5d12722a5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/reviews",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/reviews?id=65d35d108f7e04f5d12722a5",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "65d35d108f7e04f5d12722a5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/reviews?productId=65d35d108f7e04f5d12722a5&id=65d622a42bd1ca514b1c59a8",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"reviews"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "65d35d108f7e04f5d12722a5"
+						},
+						{
+							"key": "id",
+							"value": "65d622a42bd1ca514b1c59a8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

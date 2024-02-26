@@ -1,4 +1,5 @@
 import express from "express";
+import csrf from "csurf";
 import {
   allUsers,
   deleteUser,
@@ -18,6 +19,12 @@ const router = express.Router();
 
 import { authorizeRoles, isAuthenticatedUser } from "../middlewares/auth.js";
 
+//CSRF protection
+const csrfProtection = csrf({ cookie: true });
+router.route("/getCSRFToken").get(csrfProtection, (req, res) => {
+  res.send({ csrfToken: req.csrfToken() });
+});
+
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/logout").get(logout);
@@ -26,8 +33,12 @@ router.route("/password/forgot").post(forgotPassword);
 router.route("/password/reset/:token").put(resetPassword);
 
 router.route("/me").get(isAuthenticatedUser, getUserProfile);
-router.route("/me/update").put(isAuthenticatedUser, updateProfile);
-router.route("/password/update").put(isAuthenticatedUser, updatePassword);
+router
+  .route("/me/update")
+  .put(isAuthenticatedUser, csrfProtection, updateProfile);
+router
+  .route("/password/update")
+  .put(isAuthenticatedUser, csrfProtection, updatePassword);
 router.route("/me/upload_avatar").put(isAuthenticatedUser, uploadAvatar);
 
 router

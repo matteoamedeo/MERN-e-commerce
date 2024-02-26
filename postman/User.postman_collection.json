@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "9d639a21-9630-4c11-844f-0e4e2636c32e",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20782056"
+	},
+	"item": [
+		{
+			"name": "getAllUsers - ADMIN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/users",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser - ADMIN",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Matteo Admin\",\r\n    \"email\": \"matteoamedeo@outlook.it\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/users/65d3aa46ce5eb15103b011e7",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"users",
+						"65d3aa46ce5eb15103b011e7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserDetails - ADMIN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/users/65d39d4db5e6def6df17dc93",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"users",
+						"65d39d4db5e6def6df17dc93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserProfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/me",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserProfile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Matteo Admin\",\r\n    \"email\": \"matteoamedeo@outlook.it\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/me/update",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePassword",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\": \"1234567\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/password/update",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"password",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser - ADMIN",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/v1/admin/users/65d3aa46ce5eb15103b011e7",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"users",
+						"65d3aa46ce5eb15103b011e7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

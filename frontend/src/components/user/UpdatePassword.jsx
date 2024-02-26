@@ -4,10 +4,12 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import UserLayout from "../layout/UserLayout";
 import MetaData from "../layout/MetaData";
+import { useGetCsrfTokenQuery } from "../../redux/api/authApi";
 
 const UpdatePassword = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [password, setPassword] = useState("");
+  const { data } = useGetCsrfTokenQuery();
 
   const navigate = useNavigate();
 
@@ -31,6 +33,7 @@ const UpdatePassword = () => {
     const userData = {
       oldPassword,
       password,
+      csrfToken: data.csrfToken,
     };
 
     updatePassword(userData);

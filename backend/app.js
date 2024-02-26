@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import { connectDatabase } from "./config/dbConnect.js";
 import errorMiddleware from "./middlewares/errors.js";
 
@@ -33,6 +34,7 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 // Import all routes
 import productRoutes from "./routes/products.js";

@@ -28,6 +28,7 @@ export const userApi = createApi({
           url: "/me/update",
           method: "PUT",
           body,
+          headers: { "xsrf-token": body.csrfToken },
         };
       },
       invalidatesTags: ["User"],
@@ -48,6 +49,7 @@ export const userApi = createApi({
           url: "/password/update",
           method: "PUT",
           body,
+          headers: { "xsrf-token": body.csrfToken },
         };
       },
     }),
